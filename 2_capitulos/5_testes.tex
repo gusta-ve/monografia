@@ -1,5 +1,5 @@
 % Capítulo 5, «Testes». GERADO de docs/capitulo-5-testes.md (repositório refino-quimiometrico),
-% em 07/11/2026, do commit 912f31b2 do .md. Os comentários abaixo trazem a
+% em 08/11/2026, do commit a68568dd do .md. Os comentários abaixo trazem a
 % procedência de cada número; não aparecem no PDF.
 % As escolhas feitas na montagem estão no cabeçalho daquele arquivo.
 
@@ -102,7 +102,7 @@ Os marcadores se sobrepõem --- um teste pode ser \textit{golden} e de desempenh
 
 \subsection{Nível 2: o teste de sistema caixa-preta}\label{sec:5-1-3}
 
-\textbf{Identificação.} Plano PT-001. A versão 1.4, de 13/09/2026, registra a execução dos casos internos; a versão 1.5, de 04/10/2026, atualiza a parte da avaliação com usuários para o protocolo descrito em \ref{sec:5-4}, as versões 1.6, de 07/10/2026, e 1.7, de 21/10/2026, acompanham as mudanças do formulário, a versão 1.8, de 03/11/2026, corrige o resultado esperado dos quatro casos reprovados por defeito do critério (\ref{sec:5-2-2}), e a versão 1.9, de 07/11/2026, registra a avaliação com usuários como ela foi feita, com a devolutiva escrita no lugar do formulário (\ref{sec:5-4}). Responsáveis: os seis integrantes do grupo. Orientador: Prof. Raphael Lopes De Souza.
+\textbf{Identificação.} Plano PT-001. A versão 1.4, de 13/09/2026, registra a execução dos casos internos; a versão 1.5, de 04/10/2026, atualiza a parte da avaliação com usuários para o protocolo descrito em \ref{sec:5-4}, as versões 1.6, de 07/10/2026, e 1.7, de 21/10/2026, acompanham as mudanças do formulário, a versão 1.8, de 03/11/2026, corrige o resultado esperado dos quatro casos reprovados por defeito do critério (\ref{sec:5-2-2}), a versão 1.9, de 07/11/2026, registra a avaliação com usuários como ela foi feita, com a devolutiva escrita no lugar do formulário (\ref{sec:5-4}), e a versão 2.0, de 08/11/2026, registra a reexecução de 03/11/2026 dos sete casos que tinham reprovado (\ref{sec:5-2-2}). Responsáveis: os seis integrantes do grupo. Orientador: Prof. Raphael Lopes De Souza.
 
 \textbf{Objetivo.} Em duas partes. A primeira é verificar que o sistema entregue executa, ponta a ponta e na máquina do usuário final, o fluxo prometido --- ler o par de arquivos, validar, diagnosticar, recomendar com justificativa, corrigir, medir a qualidade pelo conjunto completo de métricas e entregar os arquivos de saída --- e que esse fluxo é operável pelo público-alvo sem instalar Python, R, Docker ou banco de dados. A segunda é própria deste trabalho: verificar que o sistema não afirma mais do que mediu --- o número na tela vem com a população em que foi medido, e nenhum caminho devolve resultado estatístico sem a validação que o acompanha.
 
@@ -134,7 +134,7 @@ Duas regras de método valem para os casos do plano: o caso negativo precisa ter
 
 \textbf{Fora do escopo.} A identificação de metabólitos; a análise de multiverso e a predição e o enriquecimento de vias metabólicas, tratados como trabalho futuro; a interface web; a validação biológica dos achados; o uso por vários usuários ao mesmo tempo; a autenticação; a assinatura digital e o instalador; e as fases da especificação que não fecham (ver \ref{sec:5-3-4}).
 
-\textbf{Produto sob teste.} Os casos internos foram executados sobre o executável congelado em 09/09/2026 (commit \texttt{e3b4d7e}). O executável que os usuários do laboratório avaliaram (\ref{sec:5-4}) é outro: a versão \texttt{windows-\allowbreak{}2026.\allowbreak{}10.\allowbreak{}25.\allowbreak{}1}, de 25/10/2026 (commit \texttt{e889349}), que inclui as abas acrescentadas depois do teste, os consertos registrados até lá e as correções do SERRF, do LOESS e da validação da entrada de 24/10/2026 (\ref{sec:5-3}). Além disso, nem todo resultado obtido foi medido no executável: vários --- por exemplo os dos casos CT-VAL-001, CT-VAL-003, CT-ART-001, CT-ART-002, CT-QUA-001 e CT-TRB-001 ---, e as remedições de 13/09/2026, rodaram no ambiente de desenvolvimento, pela interface de programação no mesmo processo. A descrição deste nível como caixa-preta sobre o executável vale para os casos que a planilha registra terem rodado nele.
+\textbf{Produto sob teste.} A primeira execução dos casos internos foi sobre o executável congelado em 09/09/2026 (commit \texttt{e3b4d7e}). Os sete que reprovaram nela foram reexecutados em 03/11/2026 sobre o código daquele dia, seis no ambiente de desenvolvimento e o CT-APP-003 com a pasta congelada de novo (\ref{sec:5-2-2}). O executável que os usuários do laboratório avaliaram (\ref{sec:5-4}) é outro: a versão \texttt{windows-\allowbreak{}2026.\allowbreak{}10.\allowbreak{}25.\allowbreak{}1}, de 25/10/2026 (commit \texttt{e889349}), que inclui as abas acrescentadas depois do teste, os consertos registrados até lá e as correções do SERRF, do LOESS e da validação da entrada de 24/10/2026 (\ref{sec:5-3}). Além disso, nem todo resultado obtido foi medido no executável: vários --- por exemplo os dos casos CT-VAL-001, CT-VAL-003, CT-ART-001, CT-ART-002, CT-QUA-001 e CT-TRB-001 ---, e as remedições de 13/09/2026, rodaram no ambiente de desenvolvimento, pela interface de programação no mesmo processo. A descrição deste nível como caixa-preta sobre o executável vale para os casos que a planilha registra terem rodado nele.
 
 % Planilha, C19, e aba «Fluxo de Teste», coluna K; a nota de publicação de D593
 % (windows-2026.10.25.1, congelada de e889349 e publicada às 15:14 UTC de 25/10/2026). Depois dela saiu
@@ -158,12 +158,12 @@ A Tabela~\ref{tab:5-2} resume os casos da aba ``Fluxo de Teste'' da planilha. A 
 \hline
 CT-APP-001 & Arranque e distribuição & RNF-01 & primeira abertura em máquina sem Python, R, Docker ou banco & Compatibilidade & P1 & Aprovado \\ \hline
 CT-APP-002 & Saídas pré-processadas & RNF-02 & a pasta \texttt{saidas/\allowbreak{}} traz os quatro modos processados, com procedência & Funcional & P2 & Aprovado \\ \hline
-CT-APP-003 & Empacotamento & RNF-03 & o portão de congelamento verifica o que viajou no executável & Integração & P1 & Reprovado \\ \hline
+CT-APP-003 & Empacotamento & RNF-03 & o portão de congelamento verifica o que viajou no executável & Integração & P1 & Aprovado \\ \hline
 CT-ARQ-001 & Preparar o estudo & RF-01 & escolher o par de arquivos, com um botão nomeado para cada um & Funcional & P1 & Aprovado \\ \hline
 CT-ARQ-002 & Preparar o estudo & RF-01 & NEGATIVO: os dois arquivos trocados de posição & Funcional & P1 & Aprovado \\ \hline
 CT-ARQ-003 & Preparar o estudo & RF-02 & NEGATIVO: modo declarado diferente do conteúdo & Funcional & P2 & Aprovado \\ \hline
 CT-VAL-001 & Validação & RF-02 & validação estrutural dos quatro modos reais & Integração & P1 & Aprovado \\ \hline
-CT-VAL-002 & Validação & RF-02 & NEGATIVO: corrupção plantada detectada, um código por defeito & Funcional & P1 & Reprovado \\ \hline
+CT-VAL-002 & Validação & RF-02 & NEGATIVO: corrupção plantada detectada, um código por defeito & Funcional & P1 & Aprovado \\ \hline
 CT-VAL-003 & Diagnóstico & RF-03 & classifica o defeito e sugere fronteiras de lote & Funcional & P1 & Aprovado \\ \hline
 CT-VAL-004 & Recomendação & RF-04 & recomendação com justificativa e valor já preenchido & Funcional & P1 & Aprovado \\ \hline
 CT-VAL-005 & Recomendação & RF-04 & ``medir qual corretor vence'' informa a duração antes de começar & Desempenho & P2 & Aprovado \\ \hline
@@ -190,8 +190,8 @@ CT-PIP-005 & Pipeline e qualidade & RF-07 & PLS-DA nunca sem validação: Q$^{2}
 CT-PIP-006 & Pipeline & RF-08 & determinismo: mesma entrada e semente, saída idêntica & Funcional & P1 & Aprovado \\ \hline
 CT-PIP-007 & Pipeline & RF-09 & o progresso aparece sozinho, sem botão & Usabilidade & P2 & Aprovado \\ \hline
 CT-PIP-008 & Pipeline & RNF-05 & ``vários núcleos'' muda tempo e memória, não o resultado & Desempenho & P2 & Aprovado \\ \hline
-CT-ART-001 & Levar o resultado & RF-10 & gerar e salvar a matriz corrigida & Funcional & P1 & Reprovado \\ \hline
-CT-ART-002 & Levar o resultado & RF-10 & a matriz processada difere da corrigida & Funcional & P1 & Reprovado \\ \hline
+CT-ART-001 & Levar o resultado & RF-10 & gerar e salvar a matriz corrigida & Funcional & P1 & Aprovado \\ \hline
+CT-ART-002 & Levar o resultado & RF-10 & a matriz processada difere da corrigida & Funcional & P1 & Aprovado \\ \hline
 CT-ART-003 & Levar o resultado & RF-11 & exportar no formato do MetaboAnalyst, com corte de 5.000 & Funcional & P1 & Aprovado \\ \hline
 \end{tabularx}
 \fonte{Elaborado pelos autores.}
@@ -210,10 +210,10 @@ CT-ART-003 & Levar o resultado & RF-11 & exportar no formato do MetaboAnalyst, c
 \hline
 CT-ART-004 & Levar o resultado & RF-10 & os dois botões que geram os três corretores de uma vez & Funcional & P2 & Aprovado \\ \hline
 CT-QUA-001 & Qualidade & RF-15 & conjunto completo de métricas, nunca reduzido a um número & Funcional & P1 & Aprovado \\ \hline
-CT-QUA-002 & Qualidade & RF-15 & RSD dos QCs antes e depois, com os dois rótulos & Funcional & P1 & Reprovado \\ \hline
+CT-QUA-002 & Qualidade & RF-15 & RSD dos QCs antes e depois, com os dois rótulos & Funcional & P1 & Aprovado \\ \hline
 CT-REC-001 & O que este aplicativo NÃO faz & RF-16 & cada limite aparece com motivo não vazio & Funcional & P2 & Aprovado \\ \hline
-CT-TRB-001 & Trabalhos em curso & RF-13 & parar um trabalho a partir de qualquer aba & Funcional & P1 & Reprovado \\ \hline
-CT-CLI-001 & Linha de comando & RF-17 & os subcomandos produzem os mesmos arquivos que a janela & Integração & P3 & Reprovado \\ \hline
+CT-TRB-001 & Trabalhos em curso & RF-13 & parar um trabalho a partir de qualquer aba & Funcional & P1 & Aprovado \\ \hline
+CT-CLI-001 & Linha de comando & RF-17 & os subcomandos produzem os mesmos arquivos que a janela & Integração & P3 & Aprovado \\ \hline
 CT-SEG-001 & Servidor local embutido & RNF-06 & o servidor embutido só é alcançável da própria máquina & Segurança & P2 & Aprovado \\ \hline
 CT-USA-001 & Público-alvo & todos os RF & uso sem acompanhamento: um profissional corrige um estudo do começo ao fim & Usabilidade & P1 & Reprovado \\ \hline
 CT-USA-002 & Público-alvo & todos os RF & questionário pós-uso, na ordem das abas & Usabilidade & P1 & Reprovado \\ \hline
@@ -222,18 +222,21 @@ CT-USA-002 & Público-alvo & todos os RF & questionário pós-uso, na ordem das 
 \end{minipage}}
 \end{table}
 
-\textbf{Totais.} São 31 casos: por tipo, 21 funcionais, 3 de integração, 2 de desempenho, 3 de usabilidade, 1 de compatibilidade e 1 de segurança; por prioridade, 22 de prioridade alta, 8 de média e 1 de baixa. Foram executados 29, entre 09 e 11/09/2026, com 22 aprovados e 7 reprovados; os 2 de usabilidade foram executados na avaliação com usuários, de 16/09 a 05/11/2026, e ficam reprovados contra o resultado esperado escrito, por desvio do protocolo, e não por defeito do sistema (\ref{sec:5-4-4}).
+\textbf{Totais.} São 31 casos: por tipo, 21 funcionais, 3 de integração, 2 de desempenho, 3 de usabilidade, 1 de compatibilidade e 1 de segurança; por prioridade, 22 de prioridade alta, 8 de média e 1 de baixa. Foram executados 29, entre 09 e 11/09/2026, com 22 aprovados e 7 reprovados; os 7 foram reexecutados em 03/11/2026 e aprovados (\ref{sec:5-2-2}), e os 29 casos internos estão aprovados. Os 2 de usabilidade foram executados na avaliação com usuários, de 16/09 a 05/11/2026, e ficam reprovados contra o resultado esperado escrito, por desvio do protocolo, e não por defeito do sistema (\ref{sec:5-4-4}).
 
 % Planilha v1.5, aba «Fluxo de Teste», linhas 6 a 40, sem as linhas dos CT-MUL; contagem feita
-% com openpyxl em 04/10/2026. O status dos dois CT-USA é o da planilha v1.9, linhas 39 e 40.
+% com openpyxl em 04/10/2026. O status dos dois CT-USA é o da planilha v1.9, linhas 39 e 40. O dos
+% sete reexecutados é o da planilha v2.0, linhas 8, 13, 25, 26, 34, 36 e 37, contado com openpyxl em
+% 08/11/2026: 30 aprovados e 5 reprovados nas 35 linhas, e os 5 são os três CT-MUL de 5.2.1 e os dois
+% CT-USA.
 
-\subsection{Os reprovados, e a quem cada defeito foi atribuído}\label{sec:5-2-2}
+\subsection{Os reprovados da primeira execução, a quem cada defeito foi atribuído, e a reexecução}\label{sec:5-2-2}
 
-O dado mais útil não é quantos casos reprovaram, mas onde estava o defeito. A remedição de 13/09/2026 atribuiu cinco dos sete defeitos ao critério de teste --- o resultado esperado estava errado ou impreciso ---, um a um arquivo de evidência desatualizado e um ao sistema (Tabela~\ref{tab:5-3}).
+Na primeira execução, de 09 a 11/09/2026, sete casos reprovaram. O dado mais útil não é quantos reprovaram, mas onde estava o defeito. A remedição de 13/09/2026 atribuiu cinco dos sete defeitos ao critério de teste --- o resultado esperado estava errado ou impreciso ---, um a um arquivo de evidência desatualizado e um ao sistema (Tabela~\ref{tab:5-3}).
 
 \begin{table}[htbp]
 \centering
-\caption{Os reprovados e a atribuição de cada defeito}\label{tab:5-3}
+\caption{Os reprovados da primeira execução e a atribuição de cada defeito}\label{tab:5-3}
 \normalsize
 \begin{tabularx}{\linewidth}{|l|>{\hsize=0.59\hsize\linewidth=\hsize\raggedright\arraybackslash\hspace{0pt}}X|>{\hsize=0.62\hsize\linewidth=\hsize\raggedright\arraybackslash\hspace{0pt}}X|>{\hsize=1.79\hsize\linewidth=\hsize\raggedright\arraybackslash\hspace{0pt}}X|}
 \hline
@@ -252,12 +255,36 @@ CT-CLI-001 & BUG-006 (\textbf{alta}) & \textbf{sistema} & (1) o teste de identid
 
 Nos cinco casos de critério, a decisão registrada é corrigir o resultado esperado --- o texto do critério ---, e não o sistema. Nem todos os esperados eram impossíveis para uma implementação correta: um descrevia um comportamento que existiu e foi retirado a pedido do usuário, outro uma meta de desempenho nunca medida. É a mesma disciplina da auditoria de especificação (\ref{sec:5-3-6}): quando o esperado diverge, confere-se primeiro se ele mede o que o sistema promete, e a decisão fica registrada.
 
-A forma correta de relatar é esta: \textbf{dos sete reprovados, cinco foram atribuídos a defeito do critério de teste e um a arquivo de evidência desatualizado, com a remedição registrada; um é defeito do sistema, de severidade alta.} O resultado esperado dos cinco casos de critério já foi corrigido --- o de CT-QUA-002 antes, e os de CT-VAL-002, CT-ART-001, CT-ART-002 e CT-TRB-001 na versão 1.8 da planilha, de 03/11/2026 ---, mas o status continua ``Reprovado'' nos sete até que os casos sejam executados de novo. Dizer que ``o sistema passou em 28 de 29'' seria falso.
+\textbf{Dos sete reprovados, cinco foram atribuídos a defeito do critério de teste e um a arquivo de evidência desatualizado, com a remedição registrada; um era defeito do sistema, de severidade alta, corrigido em 25/09/2026.} O resultado esperado dos cinco casos de critério foi corrigido --- o de CT-QUA-002 antes, e os de CT-VAL-002, CT-ART-001, CT-ART-002 e CT-TRB-001 na versão 1.8 da planilha, de 03/11/2026 ---, e os sete foram executados de novo em 03/11/2026, no Windows com 12 núcleos, por scripts que conferem cada item do resultado esperado (Tabela~\ref{tab:5-3a}). Os sete foram aprovados, e a versão 2.0 da planilha os registra assim. A reexecução não rodou sobre o executável congelado em 09/09/2026: seis casos rodaram no ambiente de desenvolvimento, e o CT-APP-003 congelou a pasta de novo.
+
+\begin{table}[htbp]
+\centering
+\caption{A reexecução de 03/11/2026}\label{tab:5-3a}
+\normalsize
+\begin{tabularx}{\linewidth}{|l|>{\hsize=1\hsize\linewidth=\hsize\raggedright\arraybackslash\hspace{0pt}}X|}
+\hline
+\textbf{Caso} & \textbf{O que a reexecução mostrou} \\
+\hline
+CT-APP-003 & o portão de congelamento terminou com veredito positivo, 49 passos e nenhuma falha, do commit e do dia da corrida; o esperado foi atualizado para o matplotlib presente, que entrou com a aba de gráficos \\ \hline
+CT-VAL-002 & os cinco códigos plantados, cada um com a severidade e a localização do esperado corrigido, e o controle sem planta sem nenhum deles; rodado com o esperado antigo, o mesmo script reprova exatamente nos três itens que a correção mudou \\ \hline
+CT-ART-001 & quatro cliques iguais devolveram o mesmo identificador de trabalho, e uma semente diferente abriu outro; a matriz corrigida tem as 2.184 \textit{features} e as 68 injeções \\ \hline
+CT-ART-002 & a processada difere da corrigida no SHA-256 e na forma (2.062 contra 2.184 \textit{features}), e o registro mostra que só o filtro de variância quase nula descarta \\ \hline
+CT-QUA-002 & as dez âncoras que vêm do pipeline em R bateram na quarta casa, e com a matriz corrigida no lugar da ``antes'' a melhora cai a exatamente zero; os números do LOESS foram medidos de novo depois da correção de 24/10/2026 \\ \hline
+CT-TRB-001 & a parada chegou ao estado final em 1,12 a 1,24 s (seis ensaios, mediana de 1,16 s), e a faixa ``Trabalhos em curso'' ficou visível nas sete abas; o tempo ficou abaixo do da primeira medição, depende da máquina e não decide o caso, e o esperado passou a trazer o número novo \\ \hline
+CT-CLI-001 & as duas frentes do BUG-006 não voltaram: o teste de identidade byte a byte rodou sem nenhum caso pulado (56 testes, nenhuma falha), e o comando de exportação terminou com código zero numa console \texttt{cp932} \\ \hline
+\end{tabularx}
+\fonte{Elaborado pelos autores.}
+\end{table}
 
 % Insumo 5.2.2, sem as linhas dos CT-MUL (BUG-009 a 011, os três de critério). Planilha v1.8:
 % células J13, J25, J26 e J36, cada uma com a nota de 03/11/2026 na coluna R; os textos seguem a
 % decisão escrita na própria linha, e as severidades e localizações de CT-VAL-002 foram conferidas em
 % src/refino/io/issues.py (FIXED_SEVERITY), src/refino/io/sniffer.py e src/refino/io/validators.py.
+% Tabela 5.3a: docs/testes-sistema-20/RESULTADO.md (CT-APP-003, CT-CLI-001 e CT-QUA-002 no Windows,
+% commits b488222 e ddcdec7), docs/testes-sistema-20/RESULTADO-ct-qua-002.md (CT-QUA-002 no Linux) e
+% docs/testes-sistema-21/RESULTADO.md (os outros quatro, commit acaa5a5); D614, D616 e D617.
+% No CT-CLI-001, a primeira corrida do passo 6 reprovou num teste do corte no download processado, cuja
+% âncora mudou com a floresta do SERRF (D615); a segunda, com a âncora de D615, passou.
 
 \subsection{Estado dos defeitos}\label{sec:5-2-3}
 
@@ -271,13 +298,13 @@ A Tabela~\ref{tab:5-4} traz o estado, depois da remedição, dos dois defeitos q
 \hline
 \textbf{Defeito} & \textbf{Estado} & \textbf{Evidência} \\
 \hline
-BUG-002 (portão de congelamento em falha) & resolvido & o portão de congelamento das versões publicadas em 03/10/2026 e em 25/10/2026 terminou com 49 passos e nenhuma falha \\ \hline
-BUG-006 (linha de comando) & corrigido em 25/09/2026 & o teste passou a achar o executável onde o ambiente o instala, e os 54 testes do arquivo --- a identidade byte a byte entre a linha de comando e a interface de programação --- rodaram e passaram no Windows pela primeira vez; o comando passou a configurar a saída em UTF-8 antes de imprimir, com par causal em teste próprio \\ \hline
+BUG-002 (portão de congelamento em falha) & resolvido & o portão de congelamento das versões publicadas em 03/10/2026 e em 25/10/2026 terminou com 49 passos e nenhuma falha, e o da reexecução de 03/11/2026 também \\ \hline
+BUG-006 (linha de comando) & corrigido em 25/09/2026 & o teste passou a achar o executável onde o ambiente o instala, e os 54 testes que o arquivo tinha então --- a identidade byte a byte entre a linha de comando e a interface de programação --- rodaram e passaram no Windows pela primeira vez; o comando passou a configurar a saída em UTF-8 antes de imprimir, com par causal em teste próprio \\ \hline
 \end{tabularx}
 \fonte{Elaborado pelos autores.}
 \end{table}
 
-Pelo critério de saída do plano, o BUG-006 exigia correção e reexecução, ou decisão do orientador para entregá-lo como limitação. A correção foi feita e reexecutada nos testes automatizados; o caso CT-CLI-001 ainda precisa ser reexecutado pelo grupo para mudar de status na planilha.
+Pelo critério de saída do plano, o BUG-006 exigia correção e reexecução, ou decisão do orientador para entregá-lo como limitação. A correção foi feita e reexecutada nos testes automatizados, e o caso CT-CLI-001 foi reexecutado em 03/11/2026 e aprovado (Tabela~\ref{tab:5-3a}).
 
 % D519; mensagem do commit ba278d5 (D542): «49 passos e 0 falhas no congelamento»; nota de
 % publicação de D593, para a windows-2026.10.25.1: «O congelamento passou com 49 passos e 0 falhas». O BUG-001 —
@@ -291,7 +318,7 @@ A aba ``Gráficos'', com as figuras de qualidade da correção, entrou no ramo p
 % 193: pytest --collect-only tests/test_desktop_figuras.py sobre e889349, em 28/10/2026; eram 180 em
 % 04/10/2026.
 
-Para fechar a lacuna, ficam propostos sete casos no formato da planilha, \textbf{a executar} --- não são resultado (Tabela~\ref{tab:5-5}):
+Para fechar a lacuna, ficam propostos sete casos no formato da planilha, \textbf{a executar} --- não são resultado (Tabela~\ref{tab:5-5}).
 
 \begin{table}[htbp]
 \centering
@@ -392,7 +419,7 @@ Cinco foram corrigidos em 25/09/2026, cada um com teste, e o sexto foi corrigido
 
 \section{Resultados avaliados contra o referencial}\label{sec:5-3}
 
-Cada subseção responde a uma pergunta, com o número medido, a leitura contra o referencial teórico do capítulo 2 e o que não se pode concluir. Os números são sobre \textbf{um} estudo --- quatro modos cromatográficos do mesmo laboratório e do mesmo equipamento, com 68 amostras e 7 QCs por corrida ---, e essa ressalva vale para a seção inteira. A relação entre cada resultado e o conceito que ele avalia está resumida a seguir (Tabela~\ref{qua:5-1}).
+Cada subseção responde a uma pergunta, com o número medido, a leitura contra o referencial teórico do capítulo 2 e o que não se pode concluir. Os números são sobre \textbf{um} estudo --- quatro modos cromatográficos do mesmo laboratório e do mesmo equipamento, com 68 injeções por corrida, 7 delas de QC ---, e essa ressalva vale para a seção inteira. A relação entre cada resultado e o conceito que ele avalia está resumida a seguir (Tabela~\ref{qua:5-1}).
 
 \begin{table}[htbp]
 \centering
@@ -564,7 +591,7 @@ Daí duas consequências de projeto. O sistema não devolve \textit{scores} de P
 \begin{itemize}
 \item \textbf{Auditoria de especificação.} Em 12 auditorias de especificação, cada uma feita antes de implementar a fase correspondente, houve defeito de especificação nas 12, com 91 defeitos nas oito fases que os contaram; as fabricações recusadas antes de virarem trabalho não foram medidas.
 \item \textbf{Registro de aprendizado.} Na versão publicada em 25/10/2026, o projeto tinha registradas 586 decisões, 265 armadilhas --- situações que pareceram certas e não eram --- e 44 divergências entre a ferramenta e o pipeline de referência ou outras implementações.
-\item \textbf{Teste de sistema.} A execução do plano achou defeito no critério em cinco dos sete reprovados, e arquivo de evidência desatualizado em mais um (\ref{sec:5-2-2}).
+\item \textbf{Teste de sistema.} A execução do plano achou defeito no critério em cinco dos sete reprovados, e arquivo de evidência desatualizado em mais um (\ref{sec:5-2-2}); reexecutados, os sete foram aprovados.
 \end{itemize}
 
 % M14; cabeçalhos «## D», «## AR» e «## DV» contados em 28/10/2026 sobre e889349, o commit da
@@ -661,7 +688,7 @@ figuras: barra sem correção & igual à mediana do R nos 4 modos & as barras do
 \fonte{Elaborado pelos autores.}
 \end{table}
 
-Os números do SERRF e do LOESS no Tabela~\ref{qua:5-2} são anteriores às correções de 24/10/2026, salvo a concordância do SERRF, a linha da régua e o agrupamento dos QCs, medidos depois delas.
+Os números do SERRF e do LOESS na Tabela~\ref{qua:5-2} são anteriores às correções de 24/10/2026, salvo a concordância do SERRF, a linha da régua e o agrupamento dos QCs, medidos depois delas.
 
 % Saíram, por D523: «réguas sem ótimo comum» (M6), «robustez» (M20), «vias pelo caminho da
 % janela» e «defeito do p das vias»; M7 sai de «a régua decide», e o enriquecimento sai da
@@ -691,7 +718,7 @@ A avaliação com usuários tem dois objetivos: verificar se profissionais do la
 % e889349, publicada às 15:14 UTC de 25/10/2026; a seguinte, windows-2026.11.04.1 (2db5f72), saiu às
 % 00:37 UTC de 05/11/2026, depois da reunião, e fica fora.
 
-\textbf{O que muda em relação ao plano.} O uso não foi feito sozinho: os usuários receberam orientações pontuais do grupo, e a reunião teve o grupo presente. O formulário não foi respondido: o grupo pediu que ele servisse de roteiro para a devolutiva escrita, que ficou no lugar dele. E o número de participantes ficou abaixo do mínimo do plano. A evidência que resta é o relato escrito dos próprios usuários, mais fraco que a observação, e é assim que este capítulo o trata. A regra que vinha do plano continua a valer: avaliação positiva com tarefa não concluída não valida a funcionalidade.
+\textbf{O que muda em relação ao plano.} O uso não foi feito sozinho: os usuários receberam orientações pontuais do grupo, e a reunião teve o grupo presente. O formulário não foi respondido: o grupo pediu que ele servisse de roteiro para a devolutiva escrita, que ficou no lugar dele. O número de participantes ficou abaixo do mínimo do plano. E o programa foi ao laboratório antes de os casos de prioridade alta estarem todos aprovados, como o plano pedia: seis deles estavam reprovados desde a primeira execução, com o defeito atribuído na remedição de 13/09/2026, e só foram aprovados na reexecução de 03/11/2026 (\ref{sec:5-2-2}). A evidência que resta é o relato escrito dos próprios usuários, mais fraco que a observação, e é assim que este capítulo o trata. A regra que vinha do plano continua a valer: avaliação positiva com tarefa não concluída não valida a funcionalidade.
 
 \textbf{Participantes.} Profissionais do laboratório parceiro que processam dados de metabolômica na rotina.
 
@@ -756,7 +783,7 @@ testes com outros pesquisadores de metabolômica, de perfis diferentes & trabalh
 % D651 veio de um pedido do orientador, e não da devolutiva, e por isso a linha das etapas fica como
 % trabalho futuro.
 
-\textbf{Os casos do plano.} Contra o resultado esperado escrito, os dois casos de usabilidade ficam ``Reprovado'' na versão 1.9 da planilha: o CT-USA-001 pedia a tarefa concluída sozinho e um mínimo de participantes, e o CT-USA-002, o formulário enviado por todos. Os desvios são do protocolo, e não defeitos do sistema: a tarefa central foi concluída, e a troca do formulário pela devolutiva foi decisão do grupo. Com a devolutiva incluída por indicação do orientador, o desvio fica declarado como limite desta avaliação (\ref{sec:5-4-5}), e cada ponto levantado tem destino na Tabela~\ref{tab:5-9}.
+\textbf{Os casos do plano.} Contra o resultado esperado escrito, os dois casos de usabilidade ficam ``Reprovado'' na planilha desde a versão 1.9: o CT-USA-001 pedia a tarefa concluída sozinho e um mínimo de participantes, e o CT-USA-002, o formulário enviado por todos. Os desvios são do protocolo, e não defeitos do sistema: a tarefa central foi concluída, e a troca do formulário pela devolutiva foi decisão do grupo. Com a devolutiva incluída por indicação do orientador, o desvio fica declarado como limite desta avaliação (\ref{sec:5-4-5}), e cada ponto levantado tem destino na Tabela~\ref{tab:5-9}.
 
 \subsection{Limites desta avaliação}\label{sec:5-4-5}
 
@@ -770,7 +797,7 @@ A conclusão da tarefa é declarada pelos usuários, e não observada; não há 
 \item \textbf{A suíte inteira, numa execução única, quebra no Windows.} Os testes da janela e das figuras, rodados juntos no mesmo processo, terminavam com corrupção de memória (\texttt{0xc0000374}) aos 43\% da segunda metade; por isso rodam separados, e as exclusões somam 463 de 3.125 testes (15\%) da segunda metade. Uma causa foi achada e corrigida em 25/09/2026 --- no reprodutor, de 9 quebras em 20 execuções para 0 em 20 ---, e um segundo mecanismo continua aberto.
 \item \textbf{\texttt{make test-\allowbreak{}all} custa horas:} um critério mede cerca de 4 h, e um módulo de estimadores passa de 30 min. Na prática, rodam-se os arquivos que a mudança alcança.
 \item \textbf{Não há integração contínua:} nada roda por rotina, e a camada de contêiner só roda por execução deliberada.
-\item \textbf{O teste de sistema é sobre o executável de 09/09/2026}, e o que os usuários avaliaram é o de 25/10/2026 (\ref{sec:5-1-3}).
+\item \textbf{O teste de sistema é sobre o executável de 09/09/2026, e a reexecução dos sete reprovados, sobre o código de 03/11/2026}, quase toda no ambiente de desenvolvimento; o que os usuários avaliaram é o executável de 25/10/2026 (\ref{sec:5-1-3}).
 \item \textbf{A verificação das figuras (\ref{sec:5-2-5}) não rodou o executável}: os caminhos rodaram no ambiente de desenvolvimento, e a janela montada usou a plataforma gráfica virtual do Qt.
 \item \textbf{Populações estreitas nas figuras:} um valor por parâmetro (semente 42, uma variante de RSD, um lote, paralelismo ligado); a PCA ``depois'' sem conferência independente; 9 das 32 figuras abertas e inspecionadas visualmente, e as outras 23 conferidas pelo texto extraído e pelos números; e a gravação em PNG e a ampliação não foram exercitadas.
 \item \textbf{A avaliação com usuários é um relato escrito, não observado, e pequena} (\ref{sec:5-4-5}).
